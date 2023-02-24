@@ -17,7 +17,8 @@ public class SeleniumStart {
         System.out.println("Opening web-site");
         wd = new ChromeDriver();
 //    wd.get("https://telranedu.web.app/home");
-        wd.navigate().to("https://telranedu.web.app/home");
+//        wd.navigate().to("https://telranedu.web.app/home");
+        wd.navigate().to("https://telranedu.web.app/login");
 //    wd.navigate().forward();
 //    wd.navigate().back();
     }
@@ -26,8 +27,17 @@ public class SeleniumStart {
     public void testLogin() {
 //        System.out.println("Test is over");
         WebElement element = wd.findElement(By.tagName("a"));
+        WebElement form = wd.findElement(By.tagName("form"));
         List<WebElement> elements = wd.findElements(By.tagName("a"));
         System.out.println(elements.size());
+
+        WebElement root = wd.findElement(By.id("root"));
+        wd.findElement(By.className("navbar-component_nav__1X_4m"));
+        wd.findElement(By.linkText("Registration"));
+        wd.findElement(By.name("password"));
+        wd.findElement(By.partialLinkText("LOG"));
+
+
     }
 
 
